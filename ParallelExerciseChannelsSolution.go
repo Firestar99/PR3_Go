@@ -10,7 +10,7 @@ func main() {
 	for i := 0; i < 5; i++ {
 		n := i
 		go func() {
-			prints <- countDeviders(123456780 + n)
+			prints <- countDividers(123456780 + n)
 		}()
 	}
 
@@ -19,7 +19,7 @@ func main() {
 	}
 }
 
-func countDeviders(number int) string {
+func countDividers(number int) string {
 	var count = 0
 	for i := 1; i < number; i++ {
 		if number%i == 0 {
