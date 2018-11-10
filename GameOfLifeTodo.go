@@ -138,55 +138,15 @@ func main() {
 	ParseLayout(array, height, width, layout.initial)
 
 	for i := 0; i < layout.generations; i++ {
-		printOut(array, height, width)
-
-		//step
-		for y := 0; y < height; y++ {
-			for x := 0; x < width; x++ {
-				(*next)[y][x] = Next(array, height, width, y, x)
-			}
-		}
-
-		//swap buffers
-		temp := array
-		array = next
-		next = temp
+		//insert code here!
 
 		//sleep
 		time.Sleep(200 * time.Millisecond)
 	}
-	printOut(array, height, width)
 }
 
 func Next(array *[][]bool, height, width int, y, x int) bool {
-	//count the surrounding fields which are alive
-	var count = 0
-	for offy := -1; offy <= 1; offy++ {
-		for offx := -1; offx <= 1; offx++ {
-			if !(offx == 0 && offy == 0) {
-				if ArrayGetOrDefault(array, height, width, offy+y, offx+x, false) {
-					count++
-				}
-			}
-		}
-	}
-
-	//set the new state depending on count
-	if count < 2 {
-		return false
-	}
-	if count == 2 {
-		return (*array)[y][x]
-	}
-	if count == 3 {
-		return true
-	}
-	return false
-}
-
-//gets the value or returns def if requested position is out of bounds
-func ArrayGetOrDefault(array *[][]bool, height, width int, y, x int, def bool) bool {
-
+	//insert code here!
 }
 
 //premade functions
