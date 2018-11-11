@@ -6,6 +6,7 @@ Erklären sie warum es zu diesem Fehler kommt und korrigieren sie das Programm i
 package main
 
 func main() {
+
 	c := make(chan int)
 	c <- 42
 	val := <-c
