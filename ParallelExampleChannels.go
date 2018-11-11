@@ -6,7 +6,7 @@ func main() {
 	messageChannel := make(chan string)
 
 	go func() {
-		messageChannel <- "test"
+		messageChannel <- "42"
 	}()
 
 	fmt.Print(<-messageChannel)
