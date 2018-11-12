@@ -186,7 +186,14 @@ func Next(array *[][]bool, height, width int, y, x int) bool {
 
 //gets the value or returns def if requested position is out of bounds
 func ArrayGetOrDefault(array *[][]bool, height, width int, y, x int, def bool) bool {
-
+	if 0 > y || y >= height {
+		return def
+	}
+	line := (*array)[y]
+	if 0 > x || x >= width {
+		return def
+	}
+	return line[x]
 }
 
 //premade functions
